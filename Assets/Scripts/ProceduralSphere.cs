@@ -8,7 +8,7 @@ public class ProceduralSphere : MonoBehaviour
 
     private void OnEnable()
     {
-        Mesh mesh = new Mesh { name = "Procedural Plane" };
+        Mesh mesh = new Mesh { name = "Procedural Sphere" };
 
         mesh.vertices = new Vector3[]
         {
