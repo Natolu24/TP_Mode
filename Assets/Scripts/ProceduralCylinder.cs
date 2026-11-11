@@ -46,23 +46,29 @@ public class ProceduralCylinder : MonoBehaviour
                 triangles[(x + y * gridWidth) * 4 * 3 + 0] = (x + y * gridWidth); // top left
                 triangles[(x + y * gridWidth) * 4 * 3 + 1] = ((x + y * gridWidth) + 1 ) % gridWidth + y * gridWidth; // top right
                 triangles[(x + y * gridWidth) * 4 * 3 + 2] = (x + y * gridWidth) + gridWidth; // bot left
+                
                 triangles[(x + y * gridWidth) * 4 * 3 + 3] = ((x + y * gridWidth) + 1 ) % gridWidth + y * gridWidth; // top right
                 triangles[(x + y * gridWidth) * 4 * 3 + 4] = ((x + y * gridWidth) + gridWidth + 1) % gridWidth + (y + 1) * gridWidth; // bot right
                 triangles[(x + y * gridWidth) * 4 * 3 + 5] = (x + y * gridWidth) + gridWidth; // bot left
+                
                 // Triangles of the opposite faces
                 triangles[(x + y * gridWidth) * 4 * 3 + 6] = verticesNmb + 0; // up middle
                 triangles[(x + y * gridWidth) * 4 * 3 + 7] = ((x + y * gridWidth) + 1) % gridWidth + y * gridWidth; // top right
                 triangles[(x + y * gridWidth) * 4 * 3 + 8] = (x + y * gridWidth); // top left
+                
                 triangles[(x + y * gridWidth) * 4 * 3 + 9] = verticesNmb + 1; // down middle
                 triangles[(x + y * gridWidth) * 4 * 3 + 10] = (x + y * gridWidth) + gridWidth; // bot left
                 triangles[(x + y * gridWidth) * 4 * 3 + 11] = ((x + y * gridWidth) + gridWidth + 1) % gridWidth + (y + 1) * gridWidth; // bot right
+                
                 if (truncated <= 0) continue;
+                
                 // Inner triangles of truncated parts
                 if (x == 0)
                 {
                     triangles[trianglesNmb * 3 - 12] = verticesNmb + 0; // up middle
                     triangles[trianglesNmb * 3 - 11] = (x + y * gridWidth); // top left
                     triangles[trianglesNmb * 3 - 10] = verticesNmb + 1; // down middle
+                    
                     triangles[trianglesNmb * 3 - 9] = (x + y * gridWidth); // top left
                     triangles[trianglesNmb * 3 - 8] = (x + y * gridWidth) + gridWidth; // bot left
                     triangles[trianglesNmb * 3 - 7] = verticesNmb + 1; // down middle
@@ -72,6 +78,7 @@ public class ProceduralCylinder : MonoBehaviour
                     triangles[trianglesNmb * 3 - 6] = ((x + y * gridWidth) + 1) % gridWidth + y * gridWidth; // top right
                     triangles[trianglesNmb * 3 - 5] = verticesNmb + 0; // up middle
                     triangles[trianglesNmb * 3 - 4] = ((x + y * gridWidth) + gridWidth + 1) % gridWidth + (y + 1) * gridWidth; // bot right
+                    
                     triangles[trianglesNmb * 3 - 3] = verticesNmb + 0; // up middle
                     triangles[trianglesNmb * 3 - 2] = verticesNmb + 1; // down middle
                     triangles[trianglesNmb * 3 - 1] = ((x + y * gridWidth) + gridWidth + 1) % gridWidth + (y + 1) * gridWidth; // bot right

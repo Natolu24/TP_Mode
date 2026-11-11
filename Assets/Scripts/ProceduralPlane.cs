@@ -37,6 +37,7 @@ public class ProceduralPlane : MonoBehaviour
                 triangles[(x + y * (columns - 1)) * 6 + 0] = (x + y * columns); // top left
                 triangles[(x + y * (columns - 1)) * 6 + 1] = (x + y * columns) + columns; // bot left
                 triangles[(x + y * (columns - 1)) * 6 + 2] = (x + y * columns) + 1; // top right
+                
                 triangles[(x + y * (columns - 1)) * 6 + 3] = (x + y * columns) + 1; // top right
                 triangles[(x + y * (columns - 1)) * 6 + 4] = (x + y * columns) + columns; // bot left
                 triangles[(x + y * (columns - 1)) * 6 + 5] = (x + y * columns) + columns + 1; // bot right
